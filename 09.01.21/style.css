@@ -1,0 +1,88 @@
+    body{
+    background-image: url(fon1.png);
+
+} 
+/* html блок form */
+.e{
+    position: absolute;
+    margin: 250px 0px 0px 700px;
+    font-family: fantasy;
+    font-size: 50px;
+    text-align: center;
+    color: aqua;
+   text-shadow:5px 5px 10px rebeccapurple  ;
+   
+}
+.e input{
+    font-weight: bold;
+    filter:drop-shadow(12px 12px 22px green) ;
+    background-color:sienna ;
+    height: 40px;
+    width: 300px;
+    font-size:20pt ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#F66665 ;
+    text-align: center;
+    border-radius: 10px;
+    border:1px solid rosybrown ;
+    outline: none;
+}
+.e input:hover{
+    background-color: yellowgreen;
+}
+.tab {
+    position: absolute;
+    margin: 10px 0px 0px 700px;
+    border: 2px solid #403C00;
+    padding: 50px 50px 50px 50px;
+    background-color: #E5D700 ;
+    border-width: 10px;
+    filter: drop-shadow(10px 10px 20px #98A685); 
+}
+
+.s{
+    color:#F66665 ;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+    font-size:25px ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:#E2DCDC ;
+    filter: drop-shadow(1px 1px 5px black);
+    outline: none;
+    text-align: center;
+
+}
+
+.s:hover{
+    background-color: #BDBBC5;
+}
+.t{
+   border: 1px solid black; 
+   background-color: #403C00;
+   border-spacing:  0px ;
+   border-width: 5px;
+}
+
+.t td{
+    border:2px solid black ;
+    height: 70px;
+    width: 70px;
+}
+.t :hover {
+    background-image: url(kol.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.t tr:nth-child(even) td:nth-child(odd),
+.t tr:nth-child(odd) td:nth-child(even){
+    background-color: #E5D700;
+}
+.text {
+    font-family: fantasy;
+    font-size:40px ;
+    color:#594336 ;
+    margin: 100px 0px 0px 35px;
+   
+}
+
