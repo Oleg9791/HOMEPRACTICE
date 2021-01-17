@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Xanh+Mono:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Texturina:wght@100&family=Xanh+Mono:ital@1&display=swap");
+div {
+    width: 980px; /* ширина div */
+    height: 920px; /* высота div */
+    margin: 0px 0px 0px 400px; /*положение div относительно окна браузера (верх справа снизу слева) */
+    border-radius: 20px;/*закругление на краях div*/
+    background-image: linear-gradient(rgb(191, 202, 185), rgb(66, 189, 66)), url(auto1.jpg);
+    background-size: cover, contain; /*картинка размещается по размеру блоку*/
+    background-blend-mode: darken; /* как картинка будет накладываться на цвет*/
+    background-repeat: no-repeat; /*картинка отображается без повторения div */
+    filter: drop-shadow(4px 4px 8px rgb(46, 46, 28));/*тень*/
+}
+table {
+    margin: 600px 0px 0px 150px; /* отступ  table относительно div */
+    position: absolute; /*положение table относительно div */
+}
+input[type="radio"] { /* стилизация  input type="radio" */
+    width: 10%; /* ширина input type="radio" */
+    height: 25px; /* высота input type="radio" */
+    cursor: pointer; /*устанавливает форму курсора ввиде руки при наведении*/
+    float: right; /*положение справа (input type="radio")*/
+}
+input[type="submit"] {
+    background-color: rgb(102, 172, 33);
+    width: 100px; /* ширина input type="submit" */
+    height: 30px; /* высота input type="submit" */
+    cursor: pointer; /*устанавливает форму курсора ввиде руки при наведении*/
+    border: 2px solid rebeccapurple; /*граница  кнопки submit*/
+    border-radius: 15px; /*закругление на краях  кнопки submit*/
+    outline: none; /*параметры рамки при нажатии т.е. рамка остается закругленной*/
+    margin-left: 300px; /* отступ слева кнопки submit в td */
+    font-size: 18px; /* размер шрифта в td кнопки submit */
+    font-family: "Bebas Neue", cursive; /* внедренный шрифт в td */
+    color: rgb(31, 29, 4); /* цвет кнопки submit в td */
+}
+td:hover {
+    background-color: rgb(98, 161, 35);/* цвет td при наведении курсора */
+}
+input[type="submit"]:hover {
+    background-color: rgb(209, 125, 15); /* цвет submit при наведении курсора */
+}
+td {  /* стилизация  td */
+    height: 40px; /*высота td*/
+    width: 700px; /*ширина td*/
+    background-color: rgba(25, 105, 65, 0.698);/* цвет td */
+    border-radius: 15px;
+    font-size: 25px;/* размер шрифта в td */
+    color: rgb(31, 29, 4); /* цвет шрифта в td */
+    font-family: "Bebas Neue", cursive; /* внедренный шрифт в td */
+    font-weight: bold; /* толщина шрифта в td */
+    text-shadow: 1px 1px 2px rgb(53, 50, 50); /*тень текста*/
+    padding-left: 20px; /* отступ слева шрифта в td */
+}
+p {
+    font-family: "Bebas Neue", cursive; /* внедренный шрифт в td */
+    margin: 500px 0px 0px 140px; /* отступ  шрифта в div */
+    position: absolute; /*положение шрифта относительно div */
+    font-size: 40px; /* размер шрифта в параграфе p */
+    color: rgb(67, 88, 27); /* цвет шрифта в параграфе p */
+    text-shadow: 1px 2px 2px  rgb(53, 50, 50); /*тень текста*/
+}
