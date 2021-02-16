@@ -17,7 +17,7 @@
 <?php
 $data = $_POST["url"];
 $text = file_get_contents($data);
-$pat = "/<div class=\"news-entry\">\n?([ ]+)?<div class=\"news-entry__speech\"><p>\n?\"[\w.,\s-]+\"<\/p>([ ]+)?<\/div><\/div>/ui";
+$pat = "/<div class=\"news-entry__speech\">\n?([ ]+)?<p>[\w.,\-\s\(\)\:]+<\/p>\n?([ ]+)?<\/div>/ui";
 //$pat = "/<div class=\"news-entry\">\n?([ ]+)?<p>[\w.,\s-]+<\/p>\n?([ ]+)?<\/div>/iu";
 preg_match_all($pat, $text, $match);
 foreach ($match[0] as $value) {

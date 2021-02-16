@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<b> введите число <?php $random = "5 3";
+<b> введите число <?php $random = "1 5 7";
 
     echo $random;
-    ?> через пробел  прописью</b> <br>
+    ?> через пробел прописью</b> <br>
 <form action="?" method="post">
     <input type="text" name="t">
     <input type="submit" value="ok">
@@ -31,7 +31,7 @@ $inputNumber = preg_replace(
         "/четыре/",
         "/пять/",
         "/шесть/",
-        "/сем/",
+        "/семь/",
         "/восемь/",
         "/девять/"
     ],
