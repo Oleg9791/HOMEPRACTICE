@@ -15,21 +15,13 @@
 </body>
 </html>
 <?php
-$data = $_POST["url"];
-$text = file_get_contents($data);
-$pat = "/<div class=\"news-entry__speech\">\n?([ ]+)?<p>[\w.,\-\s\(\)\:]+<\/p>\n?([ ]+)?<\/div>/ui";
-//$pat = "/<div class=\"news-entry\">\n?([ ]+)?<p>[\w.,\s-]+<\/p>\n?([ ]+)?<\/div>/iu";
-preg_match_all($pat, $text, $match);
-foreach ($match[0] as $value) {
-    echo $value . "<br>";
+if (!empty($_POST["url"])) {
+
+    $data = $_POST["url"];
+    $text = file_get_contents($data);
+    $pat = "/<div class=\"news-entry__speech\">.*?<\/div>/uis";
+
+    preg_match_all($pat, $text, $match);
+    print_r($match[0][0]);
 }
-//print_r($match);
 ?>
-<?php
-//$a = $_POST["url"];
-//$str = file_get_contents($a);
-//$regexp = "/<div class=\"news-entry\">\n?([ ]+)?<p>[\w.,\s-]+<\/p>\n?([ ]+)?(<\/div>)+/iu";
-//$q = preg_match_all($regexp, $str, $matches);
-//foreach ($matches[0] as $match) {
-//    echo $match."<br>";
-//}
