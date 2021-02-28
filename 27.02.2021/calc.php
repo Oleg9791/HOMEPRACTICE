@@ -7,17 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body><br>
+<body>
+<h1> Calculator</h1><br>
+
 <div class="container">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm" id="left">
             One of three columns
         </div>
-        <div class="col-sm">
+        <div class="col-sm" id="center">
+
             <form action="?" method="post">
-                <input type="submit" class="btn btn-primary" value="0" name="number0">
                 <span>   <input type="submit" class="btn btn-primary" value="1" name="number1">
                 <input type="submit" class="btn btn-primary" value="2" name="number2">
                 <input type="submit" class="btn btn-primary" value="3" name="number3"></span><br>
@@ -26,14 +29,13 @@
                 <input type="submit" class="btn btn-primary" value="6" name="number6"></span><br>
                 <span><input type="submit" class="btn btn-primary" value="7" name="number7">
                 <input type="submit" class="btn btn-primary" value="8" name="number8">
-                <input type="submit" class="btn btn-primary" value="9" name="number9"><input type="submit"
-                                                                                             class="btn btn-primary"
-                                                                                             value="-" name="minus">
-</span><br>
-                <input type="submit" class="btn btn-primary" value="+" name="plus">
-                <input type="submit" class="btn btn-primary" value="*" name="multiply">
+                <input type="submit" class="btn btn-primary" value="9" name="number9"></span><br>
+                <span> <input type="submit" class="btn btn-primary" value="0" name="number0">
+                <input type="submit" class="btn btn-primary" value="-" name="minus">
+                   <input type="submit" class="btn btn-primary" value="+" name="plus"></span><br>
+                <span>  <input type="submit" class="btn btn-primary" value="*" name="multiply">
                 <input type="submit" class="btn btn-primary" value="/" name="divide">
-
+                  <input type="submit" class="btn btn-primary" value="="></span>
 
                 <!--                <select name="operator">-->
                 <!--                    <option value="plus">+</option>-->
@@ -42,7 +44,7 @@
                 <!--                    <option value="delenie">/</option>-->
                 <!--                </select>-->
                 <!--                <input type="text" name="number2">-->
-                <input type="submit" class="btn btn-primary" value="=">
+
 
             </form>
             <?php
@@ -80,11 +82,14 @@
 //                echo $one;
                 $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $one, FILE_APPEND);
+
             } elseif (!empty($_POST["number2"])) {
                 $two = $_POST["number2"];
+
 //                echo $two;
                 $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $two, FILE_APPEND);
+
 
             } elseif (!empty($_POST["number3"])) {
                 $three = $_POST["number3"];
@@ -137,6 +142,7 @@
                 $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", " " . $plus . " ", FILE_APPEND);
 
+
             } elseif (!empty($_POST["minus"])) {
                 $minus = $_POST["minus"];
 //                echo $minus;
@@ -156,13 +162,15 @@
                 file_put_contents("number.txt", " " . $divide . " ", FILE_APPEND);
 
             }
-            print_r($arr);
             function result()
             {
                 $num = explode(" ", file_get_contents("number.txt"));
 
+
                 if ($num[1] == "+") {
                     echo "Пример : $num[0]$num[1]$num[2]<br>";
+//                        print_r($num);
+
                     echo "Сумма  = " . ($num[0] + $num[2]);
 
                 } elseif ($num[1] == "-") {
@@ -178,6 +186,8 @@
                     echo "Частное  = " . round(($num[0] / $num[2]), 2);
 
                 }
+
+
                 return $num;
 
 
@@ -186,19 +196,8 @@
             result();
 
             ?>
-            <!--            --><?php //function setFile($a)
-            //            {
-            //                $a = file_put_contents('number.txt', '');
-            //                return ($a);
-            //            }
-            //
-            //            ?>
-            <!--            <a href="--><?php //file_put_contents('number.txt', ''); ?><!--">Reset-->
-            <!--            </a>-->
-
-
         </div>
-        <div class="col-sm">
+        <div class="col-sm" id="right">
             One of three columns
         </div>
     </div>
