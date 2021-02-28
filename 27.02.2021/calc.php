@@ -17,20 +17,22 @@
         </div>
         <div class="col-sm">
             <form action="?" method="post">
-                <input type="submit" value="0" name="number0">
-                <input type="submit" value="1" name="number1">
-                <input type="submit" value="2" name="number2">
-                <input type="submit" value="3" name="number3">
-                <input type="submit" value="4" name="number4">
-                <input type="submit" value="5" name="number5">
-                <input type="submit" value="6" name="number6">
-                <input type="submit" value="7" name="number7">
-                <input type="submit" value="8" name="number8">
-                <input type="submit" value="9" name="number9">
-                <input type="submit" value="+" name="plus">
-                <input type="submit" value="-" name="minus">
-                <input type="submit" value="*" name="multiply">
-                <input type="submit" value="/" name="divide">
+                <input type="submit" class="btn btn-primary" value="0" name="number0">
+                <span>   <input type="submit" class="btn btn-primary" value="1" name="number1">
+                <input type="submit" class="btn btn-primary" value="2" name="number2">
+                <input type="submit" class="btn btn-primary" value="3" name="number3"></span><br>
+                <span> <input type="submit" class="btn btn-primary" value="4" name="number4">
+                <input type="submit" class="btn btn-primary" value="5" name="number5">
+                <input type="submit" class="btn btn-primary" value="6" name="number6"></span><br>
+                <span><input type="submit" class="btn btn-primary" value="7" name="number7">
+                <input type="submit" class="btn btn-primary" value="8" name="number8">
+                <input type="submit" class="btn btn-primary" value="9" name="number9"><input type="submit"
+                                                                                             class="btn btn-primary"
+                                                                                             value="-" name="minus">
+</span><br>
+                <input type="submit" class="btn btn-primary" value="+" name="plus">
+                <input type="submit" class="btn btn-primary" value="*" name="multiply">
+                <input type="submit" class="btn btn-primary" value="/" name="divide">
 
 
                 <!--                <select name="operator">-->
@@ -40,7 +42,7 @@
                 <!--                    <option value="delenie">/</option>-->
                 <!--                </select>-->
                 <!--                <input type="text" name="number2">-->
-                <input type="submit" value="=" onclick="">
+                <input type="submit" class="btn btn-primary" value="=">
 
             </form>
             <?php
@@ -126,7 +128,7 @@
             } elseif (!empty($_POST["number9"])) {
                 $nine = $_POST["number9"];
 //                echo $nine;
-                $data = file_get_contents("number.txt");
+                file_get_contents("number.txt");
                 file_put_contents("number.txt", $nine, FILE_APPEND);
 
             } elseif (!empty($_POST["plus"])) {
@@ -154,38 +156,45 @@
                 file_put_contents("number.txt", " " . $divide . " ", FILE_APPEND);
 
             }
-
+            print_r($arr);
             function result()
             {
-
                 $num = explode(" ", file_get_contents("number.txt"));
-                $res = 0;
+
                 if ($num[1] == "+") {
-                    echo $res = $num[0] + $num[2];
+                    echo "Пример : $num[0]$num[1]$num[2]<br>";
+                    echo "Сумма  = " . ($num[0] + $num[2]);
 
                 } elseif ($num[1] == "-") {
-                    echo $res = $num[0] - $num[2];
-
+                    echo "Пример : $num[0]$num[1]$num[2]<br>";
+                    echo "Разность  = " . ($num[0] - $num[2]);
 
                 } elseif ($num[1] == "*") {
-                    echo $res = $num[0] * $num[2];
-
+                    echo "Пример : $num[0]$num[1]$num[2]<br>";
+                    echo "Произведение  = " . ($num[0] * $num[2]);
 
                 } elseif ($num[1] == "/") {
-                    echo $res = $num[0] / $num[2];
-
+                    echo "Пример : $num[0]$num[1]$num[2]<br>";
+                    echo "Частное  = " . round(($num[0] / $num[2]), 2);
 
                 }
-//                print_r($num);
-//                echo "$num[0]$num[1]$num[2]<br>";
-//                $znak=trim(num[1])
-                return $res;
+                return $num;
 
 
             }
 
             result();
+
             ?>
+            <!--            --><?php //function setFile($a)
+            //            {
+            //                $a = file_put_contents('number.txt', '');
+            //                return ($a);
+            //            }
+            //
+            //            ?>
+            <!--            <a href="--><?php //file_put_contents('number.txt', ''); ?><!--">Reset-->
+            <!--            </a>-->
 
 
         </div>
