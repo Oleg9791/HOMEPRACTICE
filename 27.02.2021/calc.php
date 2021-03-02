@@ -78,101 +78,70 @@
 
             if (!empty($_POST["number0"])) {
                 $zero = $_POST["number0"];
-//                echo $zero;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $zero, FILE_APPEND);
 
             } elseif (!empty($_POST["number1"])) {
                 $one = $_POST["number1"];
-//                echo $one;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $one, FILE_APPEND);
 
             } elseif (!empty($_POST["number2"])) {
                 $two = $_POST["number2"];
 
-//                echo $two;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $two, FILE_APPEND);
 
 
             } elseif (!empty($_POST["number3"])) {
                 $three = $_POST["number3"];
-//                echo $three;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $three, FILE_APPEND);
 
             } elseif (!empty($_POST["number4"])) {
                 $four = $_POST["number4"];
-//                echo $four;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $four, FILE_APPEND);
 
 
             } elseif (!empty($_POST["number5"])) {
                 $five = $_POST["number5"];
-//                echo $five;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $five, FILE_APPEND);
 
 
             } elseif (!empty($_POST["number6"])) {
                 $six = $_POST["number6"];
-//                echo $six;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $six, FILE_APPEND);
 
 
             } elseif (!empty($_POST["number7"])) {
                 $seven = $_POST["number7"];
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $seven, FILE_APPEND);
 
 
             } elseif (!empty($_POST["number8"])) {
                 $eight = $_POST["number8"];
-//                echo $eight;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", $eight, FILE_APPEND);
 
             } elseif (!empty($_POST["number9"])) {
                 $nine = $_POST["number9"];
-//                echo $nine;
-//                file_get_contents("number.txt");
                 file_put_contents("number.txt", $nine, FILE_APPEND);
 
             } elseif (!empty($_POST["plus"])) {
                 $plus = $_POST["plus"];
-//                echo $plus;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", " " . $plus . " ", FILE_APPEND);
 
 
             } elseif (!empty($_POST["minus"])) {
                 $minus = $_POST["minus"];
-//                echo $minus;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", " " . $minus . " ", FILE_APPEND);
 
             } elseif (!empty($_POST["multiply"])) {
                 $multiply = $_POST["multiply"];
-//                echo $multiply;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", " " . $multiply . " ", FILE_APPEND);
 
             } elseif (!empty($_POST["divide"])) {
                 $divide = $_POST["divide"];
-//                echo $divide;
-//                $data = file_get_contents("number.txt");
                 file_put_contents("number.txt", " " . $divide . " ", FILE_APPEND);
 
             } elseif (!empty($_POST["reset"])) {
                 file_put_contents('number.txt', '');
             } elseif (!empty($_POST["calc"])) {
-//            $divide = $_POST["calc"];
-                //                echo $divide;
-//            $data = file_get_contents("number.txt");
-//            file_put_contents("number.txt", " " . $divide . " ", FILE_APPEND);
                 result();
             } else {
                 echo file_get_contents('./number.txt');
@@ -183,40 +152,26 @@
 
 
                 if ($num[1] == "+") {
-//                    echo "Пример : $num[0]$num[1]$num[2]<br>";
-////                        print_r($num);
                     echo "Сумма  = " . ($num[0] + $num[2]);
                     file_put_contents('number.txt', '');
 
                 } elseif ($num[1] == "-") {
-//                    echo "Пример : $num[0]$num[1]$num[2]<br>";
                     echo "Разность  = " . ($num[0] - $num[2]);
                     file_put_contents('number.txt', '');
 
 
                 } elseif ($num[1] == "*") {
-//                    echo "Пример : $num[0]$num[1]$num[2]<br>";
                     echo "Произведение  = " . ($num[0] * $num[2]);
                     file_put_contents('number.txt', '');
 
-
                 } elseif ($num[1] == "/") {
-//                    echo "Пример : $num[0]$num[1]$num[2]<br>";
                     echo "Частное  = " . round(($num[0] / $num[2]), 2);
                     file_put_contents('number.txt', '');
-
-
                 }
-
-
                 return $num;
-
-
             }
 
             echo file_get_contents('number.txt');
-            //            result();
-
             ?>
         </div>
         <div class="col-sm" id="right">
