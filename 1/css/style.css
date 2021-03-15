@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Roboto+Slab:wght@800&family=Yanone+Kaffeesatz:wght@500&display=swap");
+/*переменные*/
+:root {
+    --background: linear-gradient(
+        to bottom,
+        rgba(255, 204, 0, 0.65) 0%,
+        rgba(252, 202, 0, 0.65) 1%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6ffcc00', endColorstr='#00000000',GradientType=0 );
+}
+
+body {
+    font-family: "Comfortaa", cursive;
+}
+/*для всех img*/
+img {
+    max-width: 100%;
+}
+
+/*весь блок header*/
+header {
+    background-color: #ffff66;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+/*весь блок container*/
+header .container {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/*логотип*/
+header .logo {
+    max-width: 400px;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/*меню*/
+header .mnu__top {
+    list-style-type: none;
+    font-size: 22px;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px grey;
+}
+/*полоска*/
+header .mnu__top li {
+    display: inline-block;
+    /* padding: 0 35px; */
+    position: relative;
+    transition: color.1s linear;
+    vertical-align: top;
+    margin: 0 40px;
+    padding: 20px 0;
+}
+/*полоска*/
+header .mnu__top li a::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0f1114;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.1s linear;
+}
+/*полоска*/
+header .mnu__top li a:hover:after {
+    opacity: 1;
+}
+header .mnu__top li a {
+    -webkit-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    transition: color 0.4s ease;
+    display: block;
+    text-decoration: none;
+    color: #732c02;
+}
+header .mnu__top li a:hover {
+    color: #af4507;
+}
+
+/*section с фото */
+#main {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 150px 0;
+    position: relative;
+    margin-top: 10px;
+}
+
+/*затемнение блока с фото */
+#main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+/*выводим всё содержимое блока на первый план(на фоне затемнения) */
+#main .inner {
+    z-index: 2;
+    position: relative;
+}
+/*заголовок "Услуги такси" */
+#main .inner > h1 {
+    font-size: 56px;
+    color: blanchedalmond;
+}
+/*текст в description */
+#main .inner > .description {
+    margin: 15px 0 30px;
+    color: blanchedalmond;
+    letter-spacing: 0.2rem;
+}
+
+/*кнопка "Отправить заявку" */
+.btn {
+    text-decoration: none;
+    color: blanchedalmond;
+    background-color: #773007;
+    transition: all 0.4s ease;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: 500;
+}
+.btn:hover {
+    background-color: #de4112;
+}
+
+/*блок с form" */
+#content {
+    padding: 40px 0;
+}
+
+/*заголовок "ЗАРЕГИСТРИРУЙСЯ...." */
+#content .inner__content h2 {
+    font-size: 30px;
+    text-shadow: 2px 2px 4px grey;
+    color: #333300;
+}
+
+/*form */
+#content .inner__content form {
+    margin: 30px 0px 0px 400px;
+}
+
+/*надпись " Я согласен(на)...." */
+span {
+    position: absolute;
+    margin-top: 5px;
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    width: 400px;
+    height: 40px;
+    border: none;
+    background: var(--background);
+    filter: var(--filter);
+    padding-left: 20px;
+    color: #023859;
+    text-shadow: 0px 1px 1px black;
+    font-size: 16px;
+    cursor: text;
+}
+input[type="text"]:hover {
+    background-color: #9fb8b3;
+    box-shadow: 2px 2px white, 4px 4px #585e5c81;
+    top: -4px;
+    left: -4px;
+    transition: 1s;
+}
+input[type="password"] {
+    border-radius: 10px;
+    width: 400px;
+    height: 40px;
+    border: none;
+    background: var(--background);
+    filter: var(--filter);
+    padding-left: 20px;
+    color: #023859;
+    text-shadow: 0px 1px 1px black;
+    font-size: 16px;
+    cursor: text;
+}
+input[type="password"]:hover {
+    background-color: #9fb8b3;
+    box-shadow: 2px 2px white, 4px 4px #585e5c81;
+    top: -4px;
+    left: -4px;
+    transition: 1s;
+}
+.form-button {
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    background: var(--background);
+    filter: var(--filter);
+    color: #023859;
+    text-shadow: 0px 1px 1px black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-button:hover {
+    background-color: #9fb8b3;
+    box-shadow: 2px 2px white, 4px 4px #585e5c81;
+    top: -4px;
+    left: -4px;
+    transition: 1s;
+}
+/*Подвал*/
+footer {
+    background-color: #e0ddce;
+    padding: 40px 0;
+    
+}
+footer ul {
+    list-style-type: none;
+    column-count: 4;
+     
+}
+/*полоска*/
+footer li{
+     position: relative;
+    transition: color.1s linear;
+    vertical-align: top;
+    padding: 5px 0;
+}
+/*полоска*/
+footer li a::after {
+    content: "";
+    opacity: 0;
+    width: 32%;
+    height: 1px;
+    background-color: #af4507;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.1s linear;
+}
+/*полоска*/
+footer li a:hover:after {
+    opacity: 1;
+}
+
+footer ul li {
+    display: block;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 2px grey;
+}
+footer ul a {
+    color: #222;
+    text-decoration: none;
+    -webkit-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    transition: color 0.4s ease;
+}
+footer ul li a:hover {
+    color: #af4507;
+}
+.footer__text {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    text-shadow: 1px 1px 2px grey;
+}
+.inner__footer img{
+     display: block;
+  margin: 0px 22px;
+}
+
+
+/*--------------------------------------------------------------------------------------*/
+/*заголовок "Войти...." файл sign__in.php */
+#content .inner__content .sign__in{
+    margin: 0px 0px 0px 520px;
+    font-size: 50px;
+}
+.reg{
+font-size: 26px;
+margin: 0px 0px 0px 400px;
+
+}
