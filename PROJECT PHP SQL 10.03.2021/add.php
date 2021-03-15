@@ -1,5 +1,4 @@
 <?php
-// Проверка на заполненность всех полей данными
 if (empty($_POST["name"] or $_POST["name"] = "") or empty($_POST["login"] or $_POST["login"] = "")
     or empty($_POST["password"] or $_POST["password"] = "")) {
     echo "Все поля должны быть заполнены <br>";

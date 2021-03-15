@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-// Форма опроса пользователя,который прошел регитрацию и выполнил вход
 <form action="checkopros.php" method="post">
     <div><span>1. Как часто Вы пользуетесь услугами такси?</span><br>
         <input type="radio" name="q1" value="Несколько раз в месяц"><span>Несколько раз в месяц</span><br>
@@ -45,7 +44,6 @@
     <input type="submit" value="Отправить">
 </form>
 <?php
-// Функция ini_set не отображает вывод всех ошибок на экране пользователя
 ini_set('display_errors', 'Off');
 include "checkopros.php"; ?>
 </body>
