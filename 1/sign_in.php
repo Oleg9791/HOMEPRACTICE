@@ -58,6 +58,9 @@
         <div class="inner__content">
 
             <?php
+                    foreach ($variable as $key => $value) {
+                        # code...
+                    }
             ini_set('display_errors', 'Off');
 
             if (
