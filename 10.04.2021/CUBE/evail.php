@@ -29,7 +29,7 @@
             //echo "Площадь куба = {$area->square($_POST['op'])}<br>";
             //echo "Периметр куба ={$per->perimeter($_POST['op'])}<br>";
             ?>
-            <a id="button" href="index.html" class="btn btn-danger">Вернуться на главную</a>
+            <a id="button" href="index.html" class="btn btn-danger">Вернуться к расчету</a>
         </div>
         <div class="col-sm">
 
