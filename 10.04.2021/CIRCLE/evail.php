@@ -25,9 +25,6 @@
 
             $per = new CircleOne($_POST["a"]);
             echo "<div id='center' class='alert alert-secondary' role='alert'>Результат ={$per->{$_POST['op']}()}<br></div>";
-            //$area->setA(3);
-            //echo "Площадь куба = {$area->square($_POST['op'])}<br>";
-            //echo "Периметр куба ={$per->perimeter($_POST['op'])}<br>";
             ?>
             <a id="button" href="index.html" class="btn btn-danger">Вернуться к расчету</a>
         </div>
