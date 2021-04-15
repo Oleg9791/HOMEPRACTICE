@@ -3,11 +3,11 @@
 
 class Table
 {
-    /**
+    /** площадь столешницы
      * @var float
      */
     protected float $a;
-    /**
+    /** длина ножек
      * @var float
      */
     protected float $b;
@@ -40,7 +40,7 @@ class Table
         }
     }
 
-    public function priceCm(): float
+    public function priceCm(): float|int
     {
         return ($this->a + $this->b + 20);
     }
