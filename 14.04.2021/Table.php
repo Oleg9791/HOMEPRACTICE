@@ -7,7 +7,7 @@ class Table
      * @var float
      */
     protected float $a;
-    /** длина ножек
+    /** длинна ножек
      * @var float
      */
     protected float $b;
@@ -42,7 +42,7 @@ class Table
 
     public function priceCm(): float|int
     {
-        return ($this->a + $this->b + 20);
+        return ($this->a + $this->b*4 + 20);
     }
 }
 
