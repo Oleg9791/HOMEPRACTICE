@@ -38,19 +38,34 @@ class Table
         return $this;
     }
 
-    public
-    function tab()
+    public function tab()
     {
 
-        $html = "";
+        $html = "<table border='$this->border'>";
         foreach ($this->data as $datum) {
-//            for ($i = 0; $i <= count($datum); $i++) {
-//            if (count($datum) > 3) {
-            $html .= "<$this->innerText><td>$datum</td></$this->innerText>";
-        }
-//        }
-        return "<table border='$this->border'>$html</table>";
 
-//    }
+            $html .= "<$this->innerText>";
+            foreach ($datum as $value) {
+
+                $html .= "<td>$value</td>";
+            }
+            $html .= "</$this->innerText>";
+        }
+        $html .= "</table>";
+
+        return "$html";
     }
+
+    public function tab1()
+    {
+
+        $html = "<table border='$this->border'><$this->innerText>";
+        foreach ($this->data as $datum) {
+
+
+            $html .= "<td>$datum</td>";
+        }
+        return "$html</$this->innerText></table>";
+    }
+
 }

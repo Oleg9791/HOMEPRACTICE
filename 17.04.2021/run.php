@@ -14,6 +14,8 @@ echo $area
     ->setInnerText("Hello!I want to study programming!!!I want to study programming!!!")
     ->html();
 
+echo "<br><br>";
+
 $inp = new Input();
 echo $inp
     ->setType("text")
@@ -21,12 +23,38 @@ echo $inp
     ->setPlaceholder("payment")
     ->inp();
 
+echo "<br><br>";
+
 $tb = new Table();
 echo $tb
     ->setBorder(1)
     ->setInnerText("tr")
-    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
+    ->setData([
+        ['Петя', 'Вася', 'Ира'],
+        ['Вася', 'Ира', 'Петя'],
+        ['Ира', 'Лена', 'Вика'],
+        ['Лена', 'Вася', 'Ира'],
+        ['Вика', 'Ира', 'Лена'],
+        ['Оля', 'Лена', 'Вика']
+    ])
     ->tab();
 
+echo "<br>";
 
+echo $tb
+    ->setBorder(1)
+    ->setInnerText("tr")
+    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
+    ->tab1();
+echo $tb
+    ->setBorder(1)
+    ->setInnerText("tr")
+    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
+    ->tab1();
+
+echo $tb
+    ->setBorder(1)
+    ->setInnerText("tr")
+    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
+    ->tab1();
 
