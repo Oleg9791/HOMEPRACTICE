@@ -27,8 +27,7 @@ echo "<br><br>";
 
 $tb = new Table();
 echo $tb
-    ->setBorder(1)
-    ->setInnerText("tr")
+    ->setStyle(" border: 1px solid red;")
     ->setData([
         ['Петя', 'Вася', 'Ира'],
         ['Вася', 'Ира', 'Петя'],
@@ -37,24 +36,11 @@ echo $tb
         ['Вика', 'Ира', 'Лена'],
         ['Оля', 'Лена', 'Вика']
     ])
-    ->tab();
+    ->html();
 
-echo "<br>";
-
-echo $tb
-    ->setBorder(1)
-    ->setInnerText("tr")
-    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
-    ->tab1();
-echo $tb
-    ->setBorder(1)
-    ->setInnerText("tr")
-    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
-    ->tab1();
 
 echo $tb
-    ->setBorder(1)
-    ->setInnerText("tr")
-    ->setData([1, 2, 3, 4, 5, 6, 7, 8])
-    ->tab1();
-
+    ->setData([
+        ['Петя', 'Вася', 'Ира']
+    ])
+    ->html();

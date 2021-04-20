@@ -3,69 +3,45 @@
 
 class Table
 {
-    protected array $data;
-    protected float $border;
-    protected float|string $innerText = "";
+    protected array $data = [];
+    protected string $style = "";
 
     /**
      * @param array $data
-     * @return Table
+     * @return $this
      */
-    public function setData(array $data): Table
+    public function setData(array $data): static
     {
         $this->data = $data;
         return $this;
     }
 
-
     /**
-     * @param float $border
-     * @return Table
+     * @param string $style
+     * @return $this
      */
-    public function setBorder(float $border): Table
+    public function setStyle(string $style): static
     {
-        $this->border = $border;
+        $this->style = $style;
         return $this;
     }
 
-    /**
-     * @param float|string $innerText
-     * @return Table
-     */
-    public function setInnerText(float|string $innerText): Table
-    {
-        $this->innerText = $innerText;
-        return $this;
-    }
-
-    public function tab()
+    public function html()
     {
 
-        $html = "<table border='$this->border'>";
-        foreach ($this->data as $datum) {
+        $html = "<table>";
+        foreach ($this->data as $row) {
 
-            $html .= "<$this->innerText>";
-            foreach ($datum as $value) {
+            $html .= "<tr>";
+            foreach ($row as $cell) {
 
-                $html .= "<td>$value</td>";
+                $html .= "<td style='$this->style'>$cell</td>";
             }
-            $html .= "</$this->innerText>";
+            $html .= "</tr>";
         }
         $html .= "</table>";
 
-        return "$html";
-    }
-
-    public function tab1()
-    {
-
-        $html = "<table border='$this->border'><$this->innerText>";
-        foreach ($this->data as $datum) {
-
-
-            $html .= "<td>$datum</td>";
-        }
-        return "$html</$this->innerText></table>";
+        return $html;
     }
 
 }
