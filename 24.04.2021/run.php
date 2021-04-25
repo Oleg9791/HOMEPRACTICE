@@ -6,20 +6,20 @@ spl_autoload_register(function ($class) {
 
 $ol = new Ol();
 echo $ol
-    ->setArr(["Иванов", "Петров", "Сидоров"])
+    ->setArr(["Helena", "Linda", "Kat"])
     ->html();
 
 echo "<br>";
 
 $ol = new Ul();
 echo $ol
-    ->setArr(["Иванов", "Петров", "Сидоров"])
+    ->setArr(["Helena", "Linda", "Kat"])
     ->html();
 
 echo "<br>";
 
 $tab = new Table();
 echo $tab
-    ->setArr(["Иванов", "Петров", "Сидоров"])
+    ->setArr(["Helena", "Linda", "Kat"])
     ->
     html();
