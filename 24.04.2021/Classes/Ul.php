@@ -17,7 +17,7 @@ class Ul
 
     public function html()
     {
-        echo "<ul>";
+//        echo "<ul>";
 //        $anonim = function ($li) {
 //            echo "<li>$li</li>";
 //        };
@@ -25,13 +25,13 @@ class Ul
 //        array_map($anonim, $this->arr);
 
 
-         array_map(function ($li) {
-            echo "<li>$li</li>";
-        }, $this->arr);
+//        array_map(function ($li) {
+//            echo "<li>$li</li>";
+//        }, $this->arr);
 
-//        $a = array_map(fn($li) => "<li>$li</li>", $this->arr);
+        return "<ul>" . implode("", array_map(fn($li) => "<li>$li</li>", $this->arr)) . "</ul>";
 
-        echo "</ul>";
+//        echo "</ul>";
 
     }
 

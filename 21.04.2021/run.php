@@ -21,7 +21,6 @@ $br = new Br();
 echo $br
     ->setClass("table")
     ->setStyle("color:red")
-    ->setInnerText("Hello!!!")
     ->html();
 echo "<br><br>";
 

@@ -17,11 +17,11 @@ class Ol
 
     public function html()
     {
-        echo "<ol>";
-        array_walk($this->arr, function ($li) {
-            echo "<li>$li</li>";
+        $html = "<ol>";
+        array_walk($this->arr, function ($li) use (&$html) {
+            $html .= "<li>$li</li>";
         });
-        echo "</ol>";
-
+        $html .= "</ol>";
+        return $html;
     }
 }
