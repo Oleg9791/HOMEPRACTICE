@@ -3,7 +3,7 @@ include "autoload.php";
 
 //use Oleg\Calc;
 use Monika\Calculator as MonikaM;
-$calc = new Oleg\Calc(4, 7);
+$calc = new Oleg\Calc(5, 9);
 
 echo $calc->sum();
 echo "<br>";
