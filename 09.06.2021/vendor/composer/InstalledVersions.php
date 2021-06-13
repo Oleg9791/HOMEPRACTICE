@@ -20,31 +20,29 @@ use Composer\Semver\VersionParser;
 
 
 
-
-
 class InstalledVersions
 {
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => '1.0.0+no-version-set',
+    'version' => '1.0.0.0',
     'aliases' => 
     array (
     ),
-    'reference' => 'f5bb01fe487b995dc2e3189f0ad830e7efd47ecf',
+    'reference' => NULL,
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => '1.0.0+no-version-set',
+      'version' => '1.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'f5bb01fe487b995dc2e3189f0ad830e7efd47ecf',
+      'reference' => NULL,
     ),
   ),
 );
@@ -63,6 +61,7 @@ $packages = array();
 foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
+
 
 if (1 === \count($packages)) {
 return $packages[0];
@@ -227,23 +226,9 @@ return $installed[0]['root'];
 
 
 
-
 public static function getRawData()
 {
-@trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
-
 return self::$installed;
-}
-
-
-
-
-
-
-
-public static function getAllRawData()
-{
-return self::getInstalled();
 }
 
 
@@ -269,7 +254,6 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
-
 
 
 
