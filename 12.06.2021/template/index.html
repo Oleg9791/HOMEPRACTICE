@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<?php
+include "../vendor/autoload.php";
+if (isset($_POST['bel'])) {
+    $converter = new Classes\Converter($_POST['bel']);
+}
+?>
+<form action="?" method="post">
+  <input type="text" name="bel"
+  <?php if (isset($_POST['bel'])): ?>value="<?= $_POST['bel'] ?>"<?php endif; ?>>
+  <select name="convert">
+    <option value="dollar">USD</option>
+    <option value="euro">EUR</option>
+    <option value="rub">RUB</option>
+    <option value="chf">CHF</option>
+    <option value="aud">AUD</option>
+  </select>
+  <input type="text" name="result"
+  <?php if (isset($_POST['convert'])): ?>value="<?= $converter->{$_POST['convert']}() ?>"
+
+  <?php endif; ?>
+  >
+  <input type="submit" value="calculation">
+</form>
+
+</body>
+</html>
