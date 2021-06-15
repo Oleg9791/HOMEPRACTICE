@@ -68,28 +68,28 @@ class Converter
         return $aud;
     }
 
-    public function bel(float $method): float
-    {
-        if ($this->dollar() == $method) {
-            return $method * 2.48;
-        }
-        if ($this->euro() == $method) {
-            return $method * 3.02;
-        }
-        if ($this->chf() == $method) {
-            return $method * 2.77;
-        }
-        if ($this->rub() == $method) {
-            return $method * 0.03;
-        }
-        if ($this->aud() == $method) {
-            return $method * 1.92;
-        }
-        if ($this->bel($method) == $method) {
-            return $this->bel;
-        }
-
-
-    }
+//    public function bel(float $method): float
+//    {
+//        if ($this->dollar() == $method) {
+//            return $method * 2.48;
+//        }
+//        if ($this->euro() == $method) {
+//            return $method * 3.02;
+//        }
+//        if ($this->chf() == $method) {
+//            return $method * 2.77;
+//        }
+//        if ($this->rub() == $method) {
+//            return $method * 0.03;
+//        }
+//        if ($this->aud() == $method) {
+//            return $method * 1.92;
+//        }
+//        if ($this->bel($method) == $method) {
+//            return $this->bel;
+//        }
+//
+//
+//    }
 
 }
