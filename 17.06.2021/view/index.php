@@ -9,13 +9,40 @@
 </head>
 <body>
 <?php
-$url = "https://meteo.by/minsk/";
-
-$html = file_get_contents($url);
 
 
- preg_match_all("/<nobr>[\w\d+]+<\/nobr><\/span><\/td>/ui", $html, $match);
-print_r($match)
+use Classes\Weather;
+
+include "../vendor/autoload.php";
+
+$html = file_get_contents("https://yandex.by/pogoda/{$_POST['city']}?utm_campaign=informer&utm_content=main_informer&utm_medium=web&utm_source=home&utm_term=main_number");
+preg_match("/<h1 class=\"title title_level_1 header-title__title\" id=\"main_title\">(.*?)<\/h1>/", $html,
+    $math);
+
+preg_match_all("/<div class=\"temp\" role=\"text\"><span class=\"temp__value temp__value_with-unit\">(.*?)<\/span>/uim", $html, $matches);
+
 ?>
+<form action="?" method="post">
+
+    <select name="city">
+        <option value="minsk">Минск</option>
+        <option value="vitebsk">Витебск</option>
+        <option value="gomel">Гомель</option>
+        <option value="grodno">Гродно</option>
+        <option value="mogilev">Могилев</option>
+        <option value="brest">Брест</option>
+    </select>
+
+        <?php if (isset($_POST['city'])): ?>
+
+            <?php $weather = new Weather(); ?>
+
+            <?= $weather->setTemperature($matches[1][0])->setCityName($math[1])->resultTemperature() ?>
+
+        <?php endif; ?>
+
+    <input type="submit" value="ok">
+</form>
+
 </body>
 </html>
