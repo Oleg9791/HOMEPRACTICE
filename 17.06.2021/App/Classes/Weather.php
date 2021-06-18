@@ -1,6 +1,7 @@
 <?php
 
 namespace Classes;
+
 class Weather
 {
     protected string $cityName;
@@ -8,6 +9,7 @@ class Weather
 
     /**
      * @param string $cityName
+     * @return $this
      */
     public function setCityName(string $cityName): static
     {
@@ -16,24 +18,12 @@ class Weather
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getTemperature(): static
+    public function getTemperature(): string
     {
-        return $this->temperature;
-    }
-
-    /**
-     * @param float $temperature
-     */
-    public function setTemperature(string $temperature): static
-    {
-        $this->temperature = $temperature;
-        return $this;
-    }
-
-    public function resultTemperature(): string
-    {
-        return "{$this->cityName} {$this->temperature}";
+        $html = file_get_contents("https://yandex.by/pogoda/{$this->cityName}");
+        preg_match_all("/<div class=\"temp\" role=\"text\"><span class=\"temp__value temp__value_with-unit\">(.*?)<\/span>/uim", $html, $matches);
+        return $matches[1][0];
     }
 }
