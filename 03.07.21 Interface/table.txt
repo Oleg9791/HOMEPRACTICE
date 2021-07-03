@@ -1,0 +1,8 @@
+0;Name:Иванов;ZP:150
+1;Name:Петров;ZP:723
+3;Name:Сидоров;ZP:578
+4;Name:Luda;ZP:120
+5;Name:Luda;ZP:120
+6;Name:Luda;ZP:120
+7;Name:Лена;ZP:440
+9;Name:Гена;ZP:620
