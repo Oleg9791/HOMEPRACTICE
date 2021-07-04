@@ -1,0 +1,5 @@
+0;Name:Иванов;ZP:150
+1;Name:Петров;ZP:723
+3;Name:Сидоров;ZP:578
+4;Name:Alisa;ZP:432
+5;Name:Tom;ZP:876
