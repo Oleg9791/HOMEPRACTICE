@@ -6,3 +6,4 @@ print_r($table->read());
 //$table->insert(["Name" => "Гена", "ZP" => 620]);
 $table->delete(8);
 $table->update(7, ["Name" => "Лена", "ZP" => 440]);
+//print_r([[[1,3], [2,4]]]);
