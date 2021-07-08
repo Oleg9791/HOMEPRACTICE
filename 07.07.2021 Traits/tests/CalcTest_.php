@@ -2,7 +2,7 @@
 
 use PHPUnit\TextUI\XmlConfiguration\PHPUnit;
 use App\Calc;
-use App\NewCalc2;
+use App\NewCalc;
 
 class CalcTest extends \PHPUnit\Framework\TestCase
 {
@@ -11,7 +11,7 @@ class CalcTest extends \PHPUnit\Framework\TestCase
         $calc = new Calc();
         $this->assertEquals(0.52532198881, $calc->setA(45)->cos());
 
-        $calc2 = new NewCalc2();
+        $calc2 = new NewCalc();
         $this->assertEquals(0.8939966636, $calc2->setA(90)->sin());
         $this->assertEquals(0.5, $calc2->setA(-0.5)->absolut());
         $this->assertEquals(49, $calc2->setA(7)->exp());

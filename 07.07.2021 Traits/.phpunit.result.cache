@@ -1,1 +1,1 @@
-{"version":1,"defects":{"CalcTest::testCalc":4},"times":{"CalcTest::testCalc":0.005}}
+{"version":1,"defects":{"CalcTest::testCalc":4},"times":{"CalcTest::testCalc":0.005,"App\\NewCalcTest::testSquare":0.008,"App\\NewCalcTest::testAbsolut":0,"App\\NewCalcTest::testExp":0,"App\\NewCalcTest::testCos":0,"App\\NewCalcTest::testSin":0}}
