@@ -1,44 +1,49 @@
 <?php
 
-namespace App;
+namespace UnitTestCalc;
 
 use App\NewCalc;
 use PHPUnit\Framework\TestCase;
 
 class NewCalcTest extends TestCase
 {
+    private NewCalc $calc;
 
-    public function testSquare()
+    public function setUp(): void
     {
-        $calc = new NewCalc();
-        $this->assertEquals(0.52532198881, $calc->setA(45)->cos());
-
-    }
-
-    public function testAbsolut()
-    {
-        $calc = new NewCalc();
-        $this->assertEquals(0.8939966636, $calc->setA(90)->sin());
-
-    }
-
-    public function testExp()
-    {
-        $calc = new NewCalc();
-        $this->assertEquals(0.5, $calc->setA(-0.5)->absolut());
-
+        $this->calc = new NewCalc();
     }
 
     public function testCos()
     {
-        $calc = new NewCalc();
-        $this->assertEquals(49, $calc->setA(7)->exp());
+        $this->assertEquals(0.52532198881, $this->calc->setA(45)->cos());
+        $this->assertEquals(1, $this->calc->setA(0)->cos());
+        $this->assertNotEquals(-1, $this->calc->setA(0)->cos());
+        $this->assertEquals(0, $this->calc->setA(pi() / 2)->cos());
+        $this->assertEquals(-1, $this->calc->setA(pi())->cos());
+        $this->assertEquals(1, $this->calc->setA(2*pi())->cos());
+
+        $this->assertIsFloat($this->calc->setA(0)->cos());
 
     }
 
     public function testSin()
     {
-        $calc = new NewCalc();
-        $this->assertEquals(9, $calc->setA(81)->square());
+        $this->assertEquals(0.8939966636, $this->calc->setA(90)->sin());
+    }
+
+    public function testAbsolut()
+    {
+        $this->assertEquals(0.5, $this->calc->setA(-0.5)->absolut());
+    }
+
+    public function testExp()
+    {
+        $this->assertEquals(49, $this->calc->setA(7)->exp());
+    }
+
+    public function testSquare()
+    {
+        $this->assertEquals(9, $this->calc->setA(81)->square());
     }
 }
