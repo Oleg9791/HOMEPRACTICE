@@ -1,6 +1,6 @@
 <?php
 
-namespace UnitTestRow;
+namespace UnitTestRow_;
 
 use PHPUnit\Framework\TestCase;
 use App\Row;

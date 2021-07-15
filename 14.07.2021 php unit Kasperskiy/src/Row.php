@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Row
+class Row implements IRow
 {
     protected string $str;
 
@@ -21,11 +21,27 @@ class Row
     {
         $num = iconv_strlen($this->str);
         if ($num < 8) {
-//            echo "Введите больше 8";
             return false;
 
         } else {
             return true;
         }
     }
+
+    public function getCountNumeric(): bool
+    {
+        $num = iconv_strlen($this->str);
+        if ($num > 128) {
+            return false;
+
+        } else {
+            return true;
+        }
+    }
+
+
+    use LatKir;
+    use Whitespace;
+    use Numeric;
+    use ArabNum;
 }
