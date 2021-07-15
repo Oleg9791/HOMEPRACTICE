@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Row implements IRow
+class Row //implements IRow
 {
     protected string $str;
 
@@ -19,7 +19,7 @@ class Row implements IRow
 
     public function getCountNum(): bool
     {
-        $num = iconv_strlen($this->str);
+        $num = strlen($this->str);
         if ($num < 8) {
             return false;
 
@@ -30,18 +30,68 @@ class Row implements IRow
 
     public function getCountNumeric(): bool
     {
-        $num = iconv_strlen($this->str);
+        $num = mb_strlen($this->str);
         if ($num > 128) {
             return false;
 
-        } else {
+        }
+        return true;
+
+    }
+
+    public function getArabNum(): bool
+    {
+        if (preg_match_all("/[0-9]/", $this->str)) {
             return true;
         }
+        return false;
+
+    }
+
+    public function getKir(): bool
+    {
+        if (preg_match_all("/[а-я]/iu", $this->str)) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public function getLat(): bool
+    {
+        if (preg_match_all("/[a-z]/iu", $this->str)) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public function getSymbol(): bool
+    {
+        if (preg_match_all("/[~!?@#$%^&*_\-+()\[\]{}><\/\\\|\"\\\'\\\.,:;]/u", $this->str)) {
+            return false;
+        }
+        return true;
+
+    }
+
+    public function getTopBot(): bool
+    {
+        if (preg_match_all("/[a-zа-я]/u", $this->str) && preg_match_all("/[A-ZА-Я]/u", $this->str)) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public function getWhitespace(): bool
+    {
+        if (preg_match_all("/\s/iu", $this->str)) {
+            return false;
+        }
+        return true;
+
     }
 
 
-    use LatKir;
-    use Whitespace;
-    use Numeric;
-    use ArabNum;
 }

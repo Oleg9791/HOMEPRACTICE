@@ -4,14 +4,14 @@
 namespace App;
 
 
-trait Numeric
+trait Symbol
 {
     public function getSymbol(): bool
     {
         if (preg_match_all("/[~! ? @ # $ % ^ & * _ \- + ( ) [ ] { } > < \/  \| \" \' \. , : ;]/iu", $this->str)) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
 
     }
 

@@ -4,11 +4,11 @@
 namespace App;
 
 
-trait LatKir
+trait Lat
 {
     public function getLat(): bool
     {
-        if (preg_match_all("/[a-zа-я]/iu", $this->str)) {
+        if (preg_match_all("/[a-z]/iu", $this->str)) {
             return true;
         }
         return false;

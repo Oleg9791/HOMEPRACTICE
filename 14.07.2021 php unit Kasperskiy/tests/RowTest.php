@@ -14,45 +14,51 @@ class RowTest extends TestCase
         $this->row = new Row();
     }
 
-
-    public function testGetSymbol()
+    public function testgetCountNum()
     {
-        $this->assertTrue(true, $this->row->setStr("~! ? @ # $ % ^ & * _ \- + ( ) [ ] { } > < / \ | \" \' \. , : ;want to programming")->getSymbol());
-        $this->assertFalse(false, $this->row->setStr("i want")->getSymbol());
+        $this->assertEquals(true, $this->row->setStr("iwanttoprogramming")->getCountNum());
+        $this->assertEquals(true, $this->row->setStr("123graFming")->getCountNum());
+    }
+
+    public function testgetCountNumeric()
+    {
+        $this->assertEquals(true, $this->row->setStr("Дорогиедрузобеспечиваетактуальностьдальнейшихнаправлениразвитаясистемымассовсныйэкспериментпроверкиключевыомпонентов")->getCountNumeric());
 
     }
 
-    public function testGetArabNum()
+    public function testgetArabNum()
     {
-        $this->assertTrue(true, $this->row->setStr("234")->getArabNum());
-        $this->assertFalse(false, $this->row->setStr("i want")->getArabNum());
+        $this->assertEquals(true, $this->row->setStr("123")->getArabNum());
 
     }
 
-    public function testGetCountNum()
+    public function testgetKir()
     {
-        $this->assertTrue(true, $this->row->setStr("iwantTUjj")->getCountNum());
-        $this->assertFalse(false, $this->row->setStr("12jhj")->getCountNum());
+        $this->assertEquals(true, $this->row->setStr("Дорогиедрузоб")->getKir());
 
     }
 
-    public function testGetCountNumeric()
+    public function testgetLat()
     {
-        $this->assertTrue(true, $this->row->setStr("i want to programming")->getCountNumeric());
-        $this->assertFalse(false, $this->row->setStr("i wannjknhkjjjjjnkjbjkbjkbjbjkdshjkvhfjkdbvhjjjjjjjjjjjjjjjjjjjjjjvvvxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcnxcn xcvvvvvvvvvvvvvvvvvzsdfjrhhhhhhhhhrjvbhjbcxcvm m m m m m m m m m m m m m m m llllllllllllllllljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj")->getCountNumeric());
+        $this->assertEquals(true, $this->row->setStr("i11wanttoprogramming")->getLat());
 
     }
-
-    public function testWhitespace()
+    public function testgetSymbol()
     {
-        $this->assertTrue(true, $this->row->setStr("iwanttoprogramming")->getWhitespace());
-        $this->assertFalse(false, $this->row->setStr("i want")->getWhitespace());
+        $this->assertEquals(false, $this->row->setStr("!?@#$%^&*i11 want5 to programming24")->getSymbol());
+        $this->assertEquals(false, $this->row->setStr("~!?@#$%^&*_\-+()\[\]{}><\/\|\"\\\'\\\.,:;i11 want5 to programming24")->getSymbol());
+        $this->assertEquals(true, $this->row->setStr("ant5 to programming24")->getSymbol());
+
     }
-
-    public function testGetLat()
+    public function testgetTopBot()
     {
-        $this->assertTrue(true, $this->row->setStr("iwanttoprogramming")->getLat());
-        $this->assertFalse(false, $this->row->setStr("i want")->getLat());
+        $this->assertEquals(5, $this->row->setStr("iwDntto4programming24")->getTopBot());
+
+    }
+    public function testgetWhitespace()
+    {
+        $this->assertEquals(5, $this->row->setStr("i11want5toprogramming24")->getWhitespace());
+
     }
 
 }
