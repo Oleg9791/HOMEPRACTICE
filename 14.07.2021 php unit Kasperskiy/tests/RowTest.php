@@ -3,62 +3,126 @@
 namespace UnitTestRow;
 
 use PHPUnit\Framework\TestCase;
-use App\Row;
+use App\Password;
 
 class RowTest extends TestCase
 {
-    private Row $row;
+    private Password $row;
 
     public function setUp(): void
     {
-        $this->row = new Row();
+        $this->row = new Password("");
     }
 
     public function testgetCountNum()
     {
-        $this->assertEquals(true, $this->row->setStr("iwanttoprogramming")->getCountNum());
-        $this->assertEquals(true, $this->row->setStr("123graFming")->getCountNum());
+        $this->assertTrue(
+            $this
+                ->row
+                ->setPass("iwanttoprogramming")
+                ->checkMinSize()
+        );
+
+        $this->assertTrue($this
+            ->row
+            ->setPass("123graFming")
+            ->checkMinSize()
+        );
     }
 
     public function testgetCountNumeric()
     {
-        $this->assertEquals(true, $this->row->setStr("Дорогиедрузобеспечиваетактуальностьдальнейшихнаправлениразвитаясистемымассовсныйэкспериментпроверкиключевыомпонентов")->getCountNumeric());
-
+        $this
+            ->assertTrue($this
+                ->row
+                ->setPass("Дорогиедрузобеспечиваетактуальностьдальнейшихнаправлениразвитаясистемымассовсныйэкспериментпроверкиключевыомпонентов")
+                ->checkMaxSize()
+            );
     }
 
     public function testgetArabNum()
     {
-        $this->assertEquals(true, $this->row->setStr("123")->getArabNum());
+        $this->assertTrue(
+            $this
+                ->row
+                ->setPass("123")
+                ->containsNumbers()
+        );
 
+        $this->assertFalse(
+            $this
+                ->row
+                ->setPass("jhfjgkt")
+                ->containsNumbers()
+        );
     }
 
     public function testgetKir()
     {
-        $this->assertEquals(true, $this->row->setStr("Дорогиедрузоб")->getKir());
+        $this->assertTrue($this
+            ->row
+            ->setPass("Дорогиедрузоб")
+            ->checkCyrillic()
+        );
+        $this->assertFalse($this
+            ->row
+            ->setPass("djhfgiuriugy")
+            ->checkCyrillic()
+        );
 
     }
 
     public function testgetLat()
     {
-        $this->assertEquals(true, $this->row->setStr("i11wanttoprogramming")->getLat());
+        $this->assertTrue($this
+            ->row
+            ->setPass("i11wanttoprogramming")
+            ->checkLatin()
+        );
+        $this->assertFalse($this
+            ->row
+            ->setPass("воплолорл")
+            ->checkLatin()
+        );
 
     }
+
     public function testgetSymbol()
     {
-        $this->assertEquals(false, $this->row->setStr("!?@#$%^&*i11 want5 to programming24")->getSymbol());
-        $this->assertEquals(false, $this->row->setStr("~!?@#$%^&*_\-+()\[\]{}><\/\|\"\\\'\\\.,:;i11 want5 to programming24")->getSymbol());
-        $this->assertEquals(true, $this->row->setStr("ant5 to programming24")->getSymbol());
+        $this->assertTrue($this
+            ->row
+            ->setPass("i11 want5 to programming24")
+            ->checkForbiddenSymbols()
+        );
 
+        $this->assertFalse($this
+            ->row
+            ->setPass("~!?@#$%^&*_\-+()\[\]{}><\/\|\"\\\'\\\.,:;i11 want5 to programming24")
+            ->checkForbiddenSymbols()
+        );
+
+        $this->assertTrue($this
+            ->row
+            ->setPass("ant5 to programming24")
+            ->checkForbiddenSymbols()
+        );
     }
+
     public function testgetTopBot()
     {
-        $this->assertEquals(5, $this->row->setStr("iwDntto4programming24")->getTopBot());
-
+        $this->assertTrue($this
+            ->row
+            ->setPass("iwDntto4programming24")
+            ->checkUpperLowerSymbols()
+        );
     }
+
     public function testgetWhitespace()
     {
-        $this->assertEquals(5, $this->row->setStr("i11want5toprogramming24")->getWhitespace());
-
+        $this->assertFalse($this
+            ->row
+            ->setPass("i11want5toprogramming24")
+            ->checkSpaceSymbol()
+        );
     }
-
 }

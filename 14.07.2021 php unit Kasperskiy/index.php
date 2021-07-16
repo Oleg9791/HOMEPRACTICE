@@ -1,7 +1,7 @@
 <?php
 include "vendor/autoload.php";
 
-use App\Row;
+use App\Password;
 
-$row = new Row();
-echo $row->setStr("I know IT ")->getCountNum();
+$row = new Password();
+echo $row->setPass("I know IT ")->checkMinSize();
