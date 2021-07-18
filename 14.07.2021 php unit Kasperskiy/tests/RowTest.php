@@ -125,4 +125,21 @@ class RowTest extends TestCase
             ->checkSpaceSymbol()
         );
     }
+
+    public function testCheckForbiddenSymbolsLetters()
+    {
+//        $this->assertTrue($this
+//            ->row
+//            ->setPass("~!?@#$%^&*_\-+()\[\]{}><\/\|\"\\\'\\\.,:;i11want5toprOgramming24")
+//            ->checkForbiddenSymbolsLetters()
+//        );
+
+        $this->assertTrue($this
+            ->row
+            ->setPass("?1s")
+            ->checkForbiddenSymbolsLetters()
+        );
+
+    }
+
 }

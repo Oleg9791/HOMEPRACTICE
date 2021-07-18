@@ -37,7 +37,7 @@ class Password //implements IRow
 
     }
 
-    /** проверка на наличие арбских цифр
+    /** проверка на наличие арабских цифр
      * @return bool
      */
     public function containsNumbers(): bool
@@ -86,5 +86,12 @@ class Password //implements IRow
         return preg_match_all("/\s/iu", $this->pass);
     }
 
+    /** проверяет, чтобы присутствовали спецсимволы, латинские буквы, цифры: 0-9
+     * @return bool
+     */
+    public function checkForbiddenSymbolsLetters(): bool
+    {
+        return preg_match_all("/[~!?@#$%^&*_\-+()\[\]{}><\/\\\|\"\\\'\\\.,:;]/u", $this->pass) && preg_match_all("/[a-z]/iu", $this->pass) && preg_match_all("/[0-9]/", $this->pass);
+    }
 
 }
