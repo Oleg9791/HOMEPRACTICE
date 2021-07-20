@@ -7,7 +7,7 @@ use App\Figures;
 
 class FiguresTest extends TestCase
 {
-    private Figures $figures;
+    private ?Figures $figures = null;
 
     public function setUp(): void
     {
